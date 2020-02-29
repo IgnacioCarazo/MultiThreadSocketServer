@@ -1,11 +1,9 @@
-#include "widget.h"
-
-#include <QApplication>
-
+#include <QCoreApplication>
+#include <server.h>
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    Widget w;
-    w.show();
+    QCoreApplication a(argc, argv);
+    Server Server;
+    Server.StartServer();
     return a.exec();
 }
