@@ -6,9 +6,7 @@ Thread::Thread(int ID, QObject *parent) :
     this->socketDescriptor = ID;
 
 }
-/**
-  El Thread empieza esta funcion: run()
-*/
+
 void Thread::run(){
     // empieza el thread
     qDebug() <<"Iniciando thread";

@@ -13,7 +13,13 @@ class Server : public QTcpServer
 {
     Q_OBJECT
     public:
+    /**
+      Constructor
+    */
         explicit Server(QObject *parent = 0);
+    /**
+      Inicia el servidor
+    */
         void StartServer();
 
     signals:
@@ -22,6 +28,9 @@ class Server : public QTcpServer
     public slots:
 
     protected:
+        /**
+          Instancia un thread que se le asigna al cliente. Por cada cliente que se conecta se instancia un thread distinto
+        */
         void incomingConnection(qintptr socketDescriptor);
 
 };

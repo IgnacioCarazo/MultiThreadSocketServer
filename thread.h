@@ -19,13 +19,22 @@ class Thread : public QThread
           Constructor
         */
         explicit Thread(int ID, QObject *parent = 0);
+    /**
+      Crea un socket que es por el cual se conecta el cliente
+    */
         void run();
 
     signals:
         void error(QTcpSocket::SocketError socketerror);
 
     public slots:
+        /**
+          Recibe la informacion del cliente
+        */
         void readyRead();
+        /**
+          Elimina el socket del cliente desonectado de memoria
+        */
         void disconnected();
 
     private:
