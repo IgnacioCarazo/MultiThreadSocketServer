@@ -1,9 +1,13 @@
 #include "thread.h"
+#include "grafo.h"
+
+
 
 Thread::Thread(int ID, QObject *parent) :
     QThread(parent)
 {
     this->socketDescriptor = ID;
+
 
 }
 
@@ -28,6 +32,7 @@ void Thread::readyRead(){
     QByteArray Data = socket->readAll();
     qDebug() << socketDescriptor << "Informacion recibida: " << Data;
     socket->write(Data);
+
 }
 
 void Thread::disconnected(){
